@@ -1,0 +1,21 @@
+Service Name,Response Time,Availability,Throughput,Reliability,URL
+GitHub API,100,0.99,520,0.99,https://docs.github.com/en/rest
+GitLab API,105,0.98,510,0.98,https://docs.gitlab.com/ee/api/
+Bitbucket API,110,0.97,500,0.97,https://developer.atlassian.com/bitbucket/api/2/reference/
+Stack Overflow API,115,0.96,490,0.96,https://api.stackexchange.com/
+Postman API,120,0.95,480,0.95,https://www.postman.com/postman/workspace/postman-api/overview
+Swagger API,125,0.94,470,0.94,https://swagger.io/docs/
+Jenkins API,130,0.93,460,0.93,https://www.jenkins.io/doc/book/using/remote-access-api/
+Travis CI API,135,0.92,450,0.92,https://developer.travis-ci.com/
+CircleCI API,140,0.91,440,0.91,https://circleci.com/docs/api/
+Docker API,145,0.9,430,0.9,https://docs.docker.com/engine/api/
+Kubernetes API,150,0.89,420,0.89,https://kubernetes.io/docs/concepts/overview/kubernetes-api/
+Terraform API,155,0.88,410,0.88,https://www.terraform.io/docs/cloud/api/index.html
+Ansible Tower API,160,0.87,400,0.87,https://docs.ansible.com/ansible-tower/latest/html/towerapi/
+AWS API Gateway,165,0.86,390,0.86,https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html
+Azure DevOps API,170,0.85,380,0.85,https://learn.microsoft.com/en-us/rest/api/azure/devops/
+Google Cloud APIs,175,0.84,370,0.84,https://cloud.google.com/apis
+Firebase API,180,0.83,360,0.83,https://firebase.google.com/docs/reference/rest/
+OpenAI API,185,0.82,350,0.82,https://platform.openai.com/docs/api-reference
+RapidAPI Hub,190,0.81,340,0.81,https://rapidapi.com/hub
+Apigee API,195,0.8,330,0.8,https://cloud.google.com/apigee/docs/apis-overview

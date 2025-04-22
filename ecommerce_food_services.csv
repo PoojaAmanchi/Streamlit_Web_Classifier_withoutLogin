@@ -1,0 +1,21 @@
+Service Name,Response Time,Availability,Throughput,Reliability,URL
+Amazon Product API,150,0.95,440,0.93,https://affiliate-program.amazon.com/home/advertising/api
+eBay API,140,0.94,430,0.92,https://developer.ebay.com/
+Walmart API,130,0.95,420,0.93,https://developer.walmartlabs.com/
+Shopify API,120,0.96,410,0.94,https://shopify.dev/api
+Square API,110,0.97,400,0.95,https://developer.squareup.com/
+Instacart API,150,0.93,450,0.91,https://www.instacart.com/
+DoorDash API,145,0.92,460,0.9,https://developer.doordash.com/
+Uber Eats API,135,0.94,470,0.92,https://developer.uber.com/docs/eats-overview
+Zomato API,125,0.96,480,0.94,https://developers.zomato.com/api
+Swiggy API,130,0.95,490,0.93,https://www.swiggy.com/
+Grubhub API,140,0.94,495,0.91,https://developer.grubhub.com/
+Postmates API,120,0.95,470,0.93,https://developer.postmates.com/
+Deliveroo API,130,0.94,460,0.92,https://developer.deliveroo.com/
+Just Eat API,125,0.93,455,0.91,https://developer.just-eat.com/
+FreshDirect API,140,0.92,440,0.9,https://www.freshdirect.com/
+Peapod API,145,0.91,430,0.89,https://www.peapod.com/
+BigBasket API,135,0.93,450,0.91,https://www.bigbasket.com/
+Flipkart API,125,0.95,460,0.93,https://seller.flipkart.com/api-docs/FMSAPI.html
+Lazada API,130,0.94,470,0.92,https://open.lazada.com/
+Rakuten API,140,0.93,480,0.91,https://webservice.rakuten.co.jp/

@@ -1,0 +1,21 @@
+Service Name,Response Time,Availability,Throughput,Reliability,URL
+YouTube API,120,0.99,520,0.98,https://developers.google.com/youtube/v3
+Spotify API,105,0.98,490,0.97,https://developer.spotify.com/documentation/web-api/
+Twitch API,110,0.97,500,0.96,https://dev.twitch.tv/docs/api/
+Netflix API,130,0.98,480,0.97,https://developer.netflix.com/
+Vimeo API,115,0.96,470,0.95,https://developer.vimeo.com/
+Apple Music API,125,0.97,460,0.96,https://developer.apple.com/documentation/applemusicapi
+Deezer API,130,0.95,450,0.94,https://developers.deezer.com/api
+Musixmatch API,135,0.96,440,0.93,https://developer.musixmatch.com/
+Dailymotion API,140,0.94,430,0.92,https://developer.dailymotion.com/
+Mixcloud API,120,0.95,425,0.91,https://www.mixcloud.com/developers/
+SoundCloud API,125,0.93,410,0.9,https://developers.soundcloud.com/
+Pandora API,130,0.92,405,0.89,https://developer.pandora.com/
+Tidal API,135,0.91,400,0.88,https://developer.tidal.com/
+iHeartRadio API,140,0.9,395,0.87,https://developer.iheart.com/
+Shazam API,145,0.92,390,0.89,https://www.shazam.com/partners
+Last.fm API,150,0.91,385,0.88,https://www.last.fm/api
+IMDb API,120,0.96,450,0.93,https://developer.imdb.com/
+TMDb API,125,0.97,440,0.94,https://www.themoviedb.org/documentation/api
+OpenSubtitles API,130,0.95,430,0.92,https://opensubtitles.stoplight.io/docs/opensubtitles-api/
+GetStream API,135,0.96,420,0.91,https://getstream.io/

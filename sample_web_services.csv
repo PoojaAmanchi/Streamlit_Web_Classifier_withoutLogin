@@ -1,0 +1,11 @@
+Service Name,Response Time,Availability,Throughput,Reliability,URL
+OpenWeather,120,0.99,500,0.98,https://openweathermap.org/api
+CoinGecko,130,0.98,480,0.97,https://www.coingecko.com/en/api
+NewsAPI,110,0.97,450,0.96,https://newsapi.org/
+GitHub API,100,0.99,520,0.99,https://docs.github.com/en/rest
+Spotify API,105,0.98,490,0.97,https://developer.spotify.com/documentation/web-api/
+Twilio API,115,0.95,400,0.94,https://www.twilio.com/docs/usage/api
+Google Maps API,125,0.99,510,0.98,https://developers.google.com/maps/documentation
+Twitter API,140,0.96,470,0.95,https://developer.twitter.com/en/docs
+Reddit API,135,0.94,460,0.92,https://www.reddit.com/dev/api/
+Amazon Product API,150,0.95,440,0.93,https://affiliate-program.amazon.com/home/advertising/api
