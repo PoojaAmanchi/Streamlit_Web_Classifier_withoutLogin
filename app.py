@@ -11,12 +11,10 @@ import plotly.express as px
 
 # Page configuration
 st.set_page_config(page_title="Web Service Classifier & Recommender", layout="wide")
-
 st.title("🌐 Web Service Classifier & Recommender")
 
 tabs = st.tabs(["📊 Classification", "🤖 Recommendation"])
 
-# Convert dataframe to CSV function
 @st.cache_data
 def convert_df(df):
     return df.to_csv(index=False).encode('utf-8')
@@ -30,37 +28,51 @@ with tabs[0]:
         df = pd.read_csv(uploaded_file)
         st.dataframe(df)
 
-        # Simulate classification model
         feature_cols = ['Response Time', 'Availability', 'Throughput', 'Reliability']
         X = df[feature_cols]
-        y = np.random.choice(["Bronze", "Silver", "Gold", "Platinum"], size=len(X))  # Simulated labels
 
-        model = RandomForestClassifier().fit(X, y)  # Fit for LIME use
+        # ✅ Real Classification Logic
+        def classify_service(row):
+            if row['Availability'] >= 0.98 and row['Throughput'] >= 500:
+                return "Platinum"
+            elif row['Availability'] >= 0.95 and row['Throughput'] >= 470:
+                return "Gold"
+            elif row['Availability'] >= 0.92 and row['Throughput'] >= 440:
+                return "Silver"
+            else:
+                return "Bronze"
 
-        df['Classification'] = y
+        df['Classification'] = df.apply(classify_service, axis=1)
+        y = df["Classification"]
+
+        model = RandomForestClassifier().fit(X, y)
+
         st.success("✅ Classification Done")
         st.dataframe(df[['Service Name', 'Classification']])
 
-        # Explain one prediction using LIME
+        # LIME explanation
         st.subheader("Explain a Prediction (LIME)")
-        explainer = LimeTabularExplainer(X.values, feature_names=feature_cols, class_names=model.classes_, mode="classification")
+        explainer = LimeTabularExplainer(
+            X.values,
+            feature_names=feature_cols,
+            class_names=model.classes_,
+            mode="classification"
+        )
         index = st.slider("Select a service to explain", 0, len(X) - 1, 0)
         exp = explainer.explain_instance(X.iloc[index].values, model.predict_proba)
         st.text(f"Explanation for Service: {df.iloc[index]['Service Name']}")
         st.markdown(exp.as_list())
 
-        # Visualize the model's performance
+        # Confusion Matrix
         st.subheader("Model Performance (Confusion Matrix)")
         y_pred = model.predict(X)
         cm = confusion_matrix(y, y_pred, labels=model.classes_)
         disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-
-        # Plot the confusion matrix
-        fig, ax = plt.subplots(figsize=(4, 3))  # Create a new figure and axis
-        disp.plot(ax=ax)  # Plot the confusion matrix on the specified axis
+        fig, ax = plt.subplots(figsize=(4, 3))
+        disp.plot(ax=ax)
         st.pyplot(fig)
 
-        # Feature importances visualization
+        # Feature Importances
         st.subheader("Feature Importances")
         feature_importances = model.feature_importances_
         fig, ax = plt.subplots()
@@ -85,7 +97,7 @@ with tabs[1]:
 
             def content_based_recommendation(query, df, feature_cols):
                 cosine_sim = cosine_similarity(df[feature_cols], [query])
-                return np.argsort(cosine_sim.flatten())[:10]
+                return np.argsort(-cosine_sim.flatten())[:10]
 
             recommended_indices = content_based_recommendation(query, df, feature_cols)
             st.session_state["recommendations"] = recommended_indices
@@ -95,7 +107,7 @@ with tabs[1]:
             for rank, idx in enumerate(st.session_state["recommendations"], 1):
                 st.markdown(f"**{rank}. {df.iloc[idx]['Service Name']}** - [Visit]({df.iloc[idx]['URL']})")
 
-            # Export recommendations as CSV
+            # Download recommendations
             recommended_df = df.iloc[st.session_state["recommendations"]][['Service Name', 'URL']]
             csv = convert_df(recommended_df)
             st.download_button(
@@ -105,12 +117,18 @@ with tabs[1]:
                 mime='text/csv',
             )
 
-        # Visualize QoS features on a scatter plot
+        # QoS Visualization
         st.subheader("QoS Feature Visualization")
-        fig = px.scatter(df, x="Response Time", y="Availability", color="Classification", hover_data=["Service Name"])
+        fig = px.scatter(
+            df,
+            x="Response Time",
+            y="Availability",
+            color="Classification",
+            hover_data=["Service Name"]
+        )
         st.plotly_chart(fig)
 
-        # Export classification results as CSV
+        # Download classification results
         classification_df = df[['Service Name', 'Classification']]
         csv = convert_df(classification_df)
         st.download_button(
